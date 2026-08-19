@@ -2,12 +2,11 @@ public class Main {
 
     public static void main(String[] args) {
 
-        NumberProcessor processor = new NumberProcessor();
+        NumberCounter counter = new NumberCounter();
 
-        int[] numbers = {5, 8, -2, 0};
+        int[] numbers = {1, 2, 3, 4, 5};
 
-        String result =
-                processor.classifyNumbers(numbers);
+        String result = counter.countEvenOdd(numbers);
 
         System.out.println(result);
     }
