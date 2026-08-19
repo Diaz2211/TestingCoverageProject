@@ -1,92 +1,42 @@
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class NumberProcessorTest {
-
+public class NumberCounterTest {
 
     @Test
-    public void testPositiveStatement() {
+    public void testEvenAndOdd() {
 
-        NumberProcessor processor =
-                new NumberProcessor();
+        NumberCounter counter = new NumberCounter();
 
-        int[] numbers = {1, 2, -1};
+        int[] numbers = {1, 2, 3, 4};
 
+        String result = counter.countEvenOdd(numbers);
 
-        String result =
-                processor.classifyNumbers(numbers);
-
-
-        assertEquals(
-            "Positive numbers are more",
-            result
-        );
+        assertEquals("Even: 2, Odd: 2", result);
     }
 
-
-
     @Test
-    public void testNegativeStatement() {
+    public void testAllEven() {
 
-        NumberProcessor processor =
-                new NumberProcessor();
+        NumberCounter counter = new NumberCounter();
 
+        int[] numbers = {2, 4, 6};
 
-        int[] numbers = {-1, -2, 3};
+        String result = counter.countEvenOdd(numbers);
 
-
-        String result =
-                processor.classifyNumbers(numbers);
-
-
-        assertEquals(
-            "Negative numbers are more",
-            result
-        );
+        assertEquals("Even: 3, Odd: 0", result);
     }
 
-
-
     @Test
-    public void testZeroStatement() {
+    public void testAllOdd() {
 
-        NumberProcessor processor =
-                new NumberProcessor();
+        NumberCounter counter = new NumberCounter();
 
+        int[] numbers = {1, 3, 5};
 
-        int[] numbers = {0,0};
+        String result = counter.countEvenOdd(numbers);
 
-
-        String result =
-                processor.classifyNumbers(numbers);
-
-
-        assertEquals(
-            "Equal or zero dominant",
-            result
-        );
-    }
-
-
-
-    @Test
-    public void testEqualStatement() {
-
-        NumberProcessor processor =
-                new NumberProcessor();
-
-
-        int[] numbers = {1,-1};
-
-
-        String result =
-                processor.classifyNumbers(numbers);
-
-
-        assertEquals(
-            "Equal or zero dominant",
-            result
-        );
+        assertEquals("Even: 0, Odd: 3", result);
     }
 }
