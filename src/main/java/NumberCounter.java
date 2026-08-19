@@ -1,40 +1,18 @@
-public class NumberProcessor {
+public class NumberCounter {
 
-    public String classifyNumbers(int[] numbers) {
+    public String countEvenOdd(int[] numbers) {
+        int even = 0;
+        int odd = 0;
 
-        int positive = 0;
-        int negative = 0;
-        int zero = 0;
-
-
-        // Vòng lặp
         for (int number : numbers) {
 
-            // Lệnh rẽ nhánh
-            if (number > 0) {
-                positive++;
-
-            } else if (number < 0) {
-                negative++;
-
+            if (number % 2 == 0) {
+                even++;
             } else {
-                zero++;
+                odd++;
             }
         }
 
-
-        // Rẽ nhánh kết quả
-        if (positive > negative) {
-
-            return "Positive numbers are more";
-
-        } else if (negative > positive) {
-
-            return "Negative numbers are more";
-
-        } else {
-
-            return "Equal or zero dominant";
-        }
+        return "Even: " + even + ", Odd: " + odd;
     }
 }
